@@ -3,7 +3,6 @@ h5py==3.1.0
 imutils==0.5.4
 Keras==2.3.1
 Keras-Applications==1.0.8
-keras-nightly==2.5.0.dev2021032900
 Keras-Preprocessing==1.1.2
 matplotlib==3.3.4
 numpy==1.19.5
@@ -12,8 +11,6 @@ pandas==1.1.1
 scikit-learn==0.23.2
 scipy==1.4.1
 streamlit==0.83.0
-tensorboard==2.5.0
-tensorboard-data-server==0.6.1
-tensorboard-plugin-wit==1.8.0
-tensorflow==2.5.0
-tensorflow-estimator==2.5.0
+tensorboard==2.1.1
+tensorflow==2.1.0
+tensorflow-estimator==2.1.0
