@@ -1,5 +1,5 @@
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
-from keras.preprocessing import image
+from tensorflow.keras.preprocessing import image
 import numpy as np
 from PIL import Image, ImageOps
 import cv2
