@@ -33,8 +33,8 @@ def import_and_predict(image_data, model):
     #img = image.img_to_array(img)
     img = np.asarray(img)
     #img_reshape = img[np.newaxis, ...]
-    img_reshape = np.expand_dims(img, axis=0)
-    img_reshape = preprocess_input(img_reshape)
+    img = np.expand_dims(img, axis=0)
+    img_reshape = preprocess_input(img)
     prediction = model.predict(img_reshape)
     return prediction
 
@@ -42,7 +42,7 @@ def import_and_predict(image_data, model):
 if file is None:
     st.text("Please upload an image file")
 else:
-    image = Image.open(file)
+    image = Image.open(file).convert('RGB')
     st.image(image, use_column_width=True)
     predictions = import_and_predict(image, model)
     class_names = ["Not Batman", "Batman"]
