@@ -32,8 +32,9 @@ def import_and_predict(image_data, model):
     img = ImageOps.fit(image_data, size, Image.ANTIALIAS)
     #img = image.img_to_array(img)
     img = np.asarray(img)
-    img = preprocess_input(img)
-    img_reshape = img[np.newaxis, ...]
+    #img_reshape = img[np.newaxis, ...]
+    img_reshape = np.expand_dims(img, axis=0)
+    img_reshape = preprocess_input(img_reshape)
     prediction = model.predict(img_reshape)
     return prediction
 
@@ -46,6 +47,7 @@ else:
     predictions = import_and_predict(image, model)
     class_names = ["Not Batman", "Batman"]
     result = class_names[np.where(predictions > 0.5, 1, 0)[0][0]]
-    string = "The image is: " + result + ' ' + "({:.2f}% confidence)".format(predictions[0][0])
-    
+    string = "The image is: " + result + ' ' + \
+        "({:.2f}% confidence)".format(predictions[0][0])
+
     st.success(string)
