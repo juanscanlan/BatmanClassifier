@@ -2,7 +2,7 @@ from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 from tensorflow.keras.preprocessing import image
 import numpy as np
 from PIL import Image, ImageOps
-import cv2
+#import cv2
 import streamlit as st
 import tensorflow as tf
 
