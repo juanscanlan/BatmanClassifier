@@ -20,10 +20,13 @@ def load_model():
 model = load_model()
 
 st.write("""
-    # Batman Classification
+    # Batman Image Classification
     """)
 
-file = st.file_uploader("Please upload an image", type=["jpg", "png"])
+image = 'batmanpony.jpg'
+st.image(image, width=None)
+
+file = st.file_uploader("Upload Image Below", type=["jpg", "png"])
 
 
 def import_and_predict(image_data, model):
@@ -40,7 +43,7 @@ def import_and_predict(image_data, model):
 
 
 if file is None:
-    st.text("Please upload an image file")
+    st.text("Will the dark night be able to hide from the algorithm?")
 else:
     image = Image.open(file).convert('RGB')
     st.image(image, use_column_width=True)
